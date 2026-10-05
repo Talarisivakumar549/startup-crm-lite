@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+@variant dark (&.dark, .dark &);
+
+:root {
+  /* ========================================== */
+  /* Desert Clay - Light Theme Palette         */
+  /* ========================================== */
+  --brand-bg: #FCF7F2;
+  --brand-surface: #F2E8DF;
+  --brand-primary: #8A5A44;
+  --brand-secondary: #B07D62;
+  --brand-accent: #6B7C54;
+  --brand-text: #2B211C;
+  --brand-text-secondary: #7A6A61;
+  --brand-border: #DCCEC1;
+  --brand-success: #5C8A63;
+  --brand-warning: #D39A42;
+  --brand-error: #C65A4D;
+  --brand-primary-hover: #734834;
+  --brand-secondary-hover: #9E694F;
+  --brand-accent-hover: #586744;
+  --brand-new: #DCCEC1;
+}
+
+.dark {
+  /* ========================================== */
+  /* Desert Clay - Dark Theme Palette          */
+  /* ========================================== */
+  --brand-bg: #181311;
+  --brand-surface: #241D19;
+  --brand-primary: #D09A7A;
+  --brand-secondary: #E2B394;
+  --brand-accent: #A8C18D;
+  --brand-text: #F9F5F2;
+  --brand-text-secondary: #D7CEC8;
+  --brand-border: #3A302B;
+  --brand-success: #5C8A63;
+  --brand-warning: #D39A42;
+  --brand-error: #C65A4D;
+  --brand-primary-hover: #E0B496;
+  --brand-secondary-hover: #ECC9B0;
+  --brand-accent-hover: #BDD1A8;
+  --brand-new: #3A302B;
+}
+
+@theme {
+  /* ========================================== */
+  /* Override Blue Color Scale (Primary/Secondary Action States) */
+  /* ========================================== */
+  --color-blue-50: var(--brand-bg);
+  --color-blue-100: var(--brand-surface);
+  --color-blue-200: var(--brand-border);
+  --color-blue-300: color-mix(in srgb, var(--brand-border) 80%, var(--brand-text));
+  --color-blue-450: var(--brand-secondary-hover);
+  --color-blue-500: var(--brand-secondary);
+  --color-blue-600: var(--brand-primary);
+  --color-blue-700: var(--brand-primary-hover);
+  --color-blue-800: color-mix(in srgb, var(--brand-primary) 85%, black);
+  --color-blue-900: color-mix(in srgb, var(--brand-primary) 65%, black);
+  --color-blue-950: var(--brand-bg);
+
+  /* ========================================== */
+  /* Override Gray Color Scale (Base Neutrals)  */
+  /* ========================================== */
+  --color-gray-50: var(--brand-bg);
+  --color-gray-100: var(--brand-surface);
+  --color-gray-200: var(--brand-border);
+  --color-gray-300: color-mix(in srgb, var(--brand-border) 80%, var(--brand-text));
+  --color-gray-400: color-mix(in srgb, var(--brand-border) 50%, var(--brand-text));
+  --color-gray-500: var(--brand-text-secondary);
+  --color-gray-550: var(--brand-text-secondary);
+  --color-gray-600: var(--brand-text-secondary);
+  --color-gray-650: var(--brand-text-secondary);
+  --color-gray-700: color-mix(in srgb, var(--brand-surface) 30%, var(--brand-text));
+  --color-gray-750: color-mix(in srgb, var(--brand-surface) 50%, var(--brand-text));
+  --color-gray-800: var(--brand-surface);
+  --color-gray-900: var(--brand-text);
+  --color-gray-950: var(--brand-bg);
+
+  /* ========================================== */
+  /* Override Slate Color Scale                 */
+  /* ========================================== */
+  --color-slate-50: var(--brand-bg);
+  --color-slate-100: var(--brand-surface);
+  --color-slate-200: var(--brand-border);
+  --color-slate-300: color-mix(in srgb, var(--brand-border) 80%, var(--brand-text));
+  --color-slate-400: color-mix(in srgb, var(--brand-border) 50%, var(--brand-text));
+  --color-slate-500: var(--brand-text-secondary);
+  --color-slate-600: var(--brand-text-secondary);
+  --color-slate-700: color-mix(in srgb, var(--brand-surface) 30%, var(--brand-text));
+  --color-slate-800: var(--brand-surface);
+  --color-slate-900: var(--brand-text);
+  --color-slate-950: var(--brand-bg);
+
+  /* ========================================== */
+  /* Override Green Color Scale (Success)       */
+  /* ========================================== */
+  --color-green-50: color-mix(in srgb, var(--brand-success) 10%, white);
+  --color-green-100: color-mix(in srgb, var(--brand-success) 20%, white);
+  --color-green-500: var(--brand-success);
+  --color-green-600: var(--brand-success);
+  --color-green-700: color-mix(in srgb, var(--brand-success) 80%, black);
+
+  /* ========================================== */
+  /* Override Amber Color Scale (Warning)       */
+  /* ========================================== */
+  --color-amber-50: color-mix(in srgb, var(--brand-warning) 10%, white);
+  --color-amber-100: color-mix(in srgb, var(--brand-warning) 20%, white);
+  --color-amber-500: var(--brand-warning);
+  --color-amber-600: var(--brand-warning);
+  --color-amber-700: color-mix(in srgb, var(--brand-warning) 80%, black);
+
+  /* ========================================== */
+  /* Override Red Color Scale (Error/Danger)    */
+  /* ========================================== */
+  --color-red-50: color-mix(in srgb, var(--brand-error) 10%, white);
+  --color-red-100: color-mix(in srgb, var(--brand-error) 20%, white);
+  --color-red-500: var(--brand-error);
+  --color-red-600: var(--brand-error);
+  --color-red-700: color-mix(in srgb, var(--brand-error) 80%, black);
+  --color-red-750: var(--brand-error);
+
+  /* ========================================== */
+  /* Override Violet Color Scale (Secondary Indicators) */
+  /* ========================================== */
+  --color-violet-50: color-mix(in srgb, var(--brand-secondary) 10%, white);
+  --color-violet-100: color-mix(in srgb, var(--brand-secondary) 20%, white);
+  --color-violet-400: var(--brand-secondary-hover);
+  --color-violet-500: var(--brand-secondary);
+  --color-violet-900: color-mix(in srgb, var(--brand-secondary) 80%, black);
+  --color-violet-950: var(--brand-bg);
+
+  /* ========================================== */
+  /* Override Indigo Color Scale                */
+  /* ========================================== */
+  --color-indigo-500: var(--brand-accent);
+  --color-indigo-600: var(--brand-accent-hover);
+}
+
+/* ========================================================================= */
+/* CSS Selector Overrides for Global Element Cohesion                        */
+/* ========================================================================= */
+
+/* Card surface override */
+.bg-white {
+  background-color: var(--brand-surface) !important;
+}
+
+/* Inputs, Select elements, Textareas alignment with brand palette */
+input, select, textarea {
+  border-color: var(--brand-border) !important;
+  background-color: var(--brand-surface) !important;
+  color: var(--brand-text) !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--brand-primary) !important;
+  outline: none;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--brand-primary) 20%, transparent) !important;
+}
+
+/* Ensure placeholder text matches secondary text tokens */
+::placeholder {
+  color: var(--brand-text-secondary) !important;
+  opacity: 0.7 !important;
+}
+
+/* Strict contrast/accessibility on buttons with light background colors in Dark Mode */
+.dark .bg-blue-600, 
+.dark button.bg-blue-600,
+.dark .bg-linear-to-tr.from-blue-600.to-indigo-500 {
+  color: #181311 !important; /* Keep it dark espresso on sandstone buttons for maximum readability! */
+}
+.dark .bg-blue-600 svg, 
+.dark button.bg-blue-600 svg {
+  color: #181311 !important;
+}
+
+/* Fix active status icons in tables / lists for contrast */
+.active-nav-link {
+  background-color: var(--brand-bg) !important;
+  color: var(--brand-primary) !important;
+}
+
+/* Custom scrollbars if visible to align with desert clay theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--brand-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--brand-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-secondary);
+}
